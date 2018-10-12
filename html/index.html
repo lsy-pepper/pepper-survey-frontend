@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.500,minimum-scale=1.500,maximum-scale=1.500">
+  <script src="PEPPER-Dateien/vue.js"></script>
+  <link rel="stylesheet" href="PEPPER-Dateien/roboto.css">
+  <link rel="stylesheet" type="text/css" href="PEPPER-Dateien/pepper.css">
+  <link rel="stylesheet" href="PEPPER-Dateien/style.css">
+  <script src="PEPPER-Dateien/jquery.js"></script>
+  <script src="PEPPER-Dateien/qimessaging.htm"></script>
+  <script src="PEPPER-Dateien/pepper_cms_functions.js" type="text/javascript"></script>
+
+  <script src="/libs/qi/2/qi.js"></script>
+  <script src="https://www.promisejs.org/polyfills/promise-6.0.0.min.js"></script>
+
+  <script src="js/qisession.js" type="text/javascript"></script>
+
+  <script src="js/sweetalert2.all.min.js"></script>
+
+  <title>PEPPER</title>
+</head>
+
+<body>
+  <style>
+    html,
+    body {
+      overflow: hidden;
+      width: 1280px;
+      height: 800px;
+    }
+
+    #app {
+      position: relative;
+      display: none;
+    }
+
+    .languageSelector {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      height: 45px;
+      z-index: 2000;
+      display: inline-block;
+    }
+
+    .languageSelector>ul {
+      display: none;
+    }
+
+    .languageSelector>ul.show {
+      display: inline-block;
+      list-style: none;
+    }
+
+    .languageSelector li {
+      display: inline-block;
+    }
+
+    .flag {
+      display: inline-block;
+      width: 72px;
+      height: 45px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .flag.current {}
+
+    .survey_header {
+      margin: auto;
+      margin-bottom: 50px;
+    }
+
+    .background-light_2 {
+      padding-top: 80px
+    }
+  </style>
+  <div id="app" style="display: block;">
+    <div class="header-light" style="text-align: center; font-family: Roboto; background-color: rgb(255, 255, 255);">
+      <div class="header-icons">
+        <!-- <img id="home-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAABCAQAAAA22DU5AAAADklEQVR42mP8X89AcwAAlYMBgF+GjogAAAAASUVORK5CYII=" style="opacity: 0;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAABCAQAAAA22DU5AAAADklEQVR42mP8X89AcwAAlYMBgF+GjogAAAAASUVORK5CYII=" class="back-icon" style="opacity: 1;"> -->
+        <div onclick="closeApplication()" style="height: 100px;width: 150px;line-height: 100px;">
+          Zurück
+        </div>
+      </div>
+      <!-- <div class="close-container">
+        <button onclick="closeApplication()">
+          XXXXXX
+        </button>
+      </div> -->
+      <div class="title-container">
+        <span id="title">HR meets IT</span>
+      </div>
+      <div class="logo-container" style="background-image: url(img/LSY_Logo.png); background-size: contain; background-position: center center; background-repeat: no-repeat;">
+      </div>
+    </div>
+    <div class="background-light_2" style="background-image: url(&quot;&quot;); background-size: cover; background-color: rgb(255, 255, 255);">
+      <div>
+      </div>
+      <div class="survey_header" style="text-align: center; font-family: Roboto; font-size: 4vw; weight: bold;">
+        <h2>Wie finden Sie diese Veranstaltung?</h2>
+      </div>
+      <div>
+        <div id="good_button" class="button_left_2" style="text-align: center; font-family: Roboto; font-size: 2.5vw; color: rgb(255, 255, 255); background-color: #417505; background-image: url(&quot;&quot;); background-size: cover; background-position: center center;">
+          <!-- <p class="button_text">Gut!</p> -->
+          <img src="img/ThumbsUp.png"/ height="435px;">
+        </div>
+        <div id="bad_button" class="button_right_2" style="text-align: center; font-family: Roboto; font-size: 2.5vw; color: rgb(255, 255, 255); background-color: #D0021B; background-image: url(&quot;&quot;); background-size: cover; background-position: center center;">
+          <img src="img/ThumbsDown.png"/ height="435px;">
+        </div>
+      </div>
+    </div>
+    <!-- <div class="branding-container-dark" style="background-image: url(&quot;https://pip.humanizing.com/rb_content_template/templates/images/ht_logo_dark.png&quot;);">
+    </div> -->
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        buttonCssClass: [{
+          baseClass: '',
+          subClasses: []
+        }],
+        inputObject: {
+          buttons: [{
+            Type: "LINK",
+            id: "12a4368b-3031-ecca-f1f3-b00763e86ee0",
+            text: "Start!",
+            action: "slideshow/sldsdc4b360d-7924-47b0-919b-94853fa16aff.html",
+            style: {
+              'text-align': "center",
+              'vertical-align': "center",
+              display: null,
+              'font-family': "Roboto",
+              'font-size': "2.5vw",
+              color: "rgba(255,255,255,1)",
+              backgroundColor: "rgba(130,208,245,1)",
+              'background-image': "url()",
+              'background-size': "cover",
+              'background-position': "center"
+            }
+          }, {
+            Type: "LINK",
+            id: "3c35002f-4f2a-1faa-7b36-c9daed9c6cf2",
+            text: "Start!",
+            action: "slideshow/slds66b130b9-4786-4c1b-9f6c-c2d37450eaad.html",
+            style: {
+              'text-align': "center",
+              'vertical-align': "center",
+              display: null,
+              'font-family': "Roboto",
+              'font-size': "2.5vw",
+              color: "rgba(255,255,255,1)",
+              backgroundColor: "rgba(130,208,245,1)",
+              'background-image': "url()",
+              'background-size': "cover",
+              'background-position': "center"
+            }
+          }],
+          menu: {
+            isMain: true,
+            title: "HR meets IT",
+            titleStyle: {
+              'text-align': "center",
+              'vertical-align': "center",
+              display: null,
+              'font-family': "Roboto",
+              'font-size': null,
+              color: null,
+              'background-color': "rgba(255,255,255,1)"
+            },
+            logoStyle: {
+              'background-image': "url(https://htcmsstore.blob.core.windows.net/mu-dc6434dd703bc93b6c59ca1055577397ffa1c312/e605dda4-6b7b-48e1-bcbb-398144e43080.png)",
+              'background-size': "contain",
+              'background-position': "center",
+              'background-repeat': "no-repeat",
+              'background-position-x': "center"
+            },
+            themeType: "LIGHT",
+            homeLink: "../index.html",
+            backLink: "../index.html",
+            pathImages: "",
+            menuStyle: {
+              'background-image': "url()",
+              'background-size': "cover",
+              'background-color': "rgba(255,255,255,1)"
+            },
+            introText: null
+          },
+          slides: null,
+          slideshows: null,
+          language: "ged",
+          allowedLanguages: [{
+            Lang: "ged",
+            Active: true,
+            ReadableName: "German",
+            Icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAb0lEQVR42u3aMQHAQAzEsOOPrZz8Q2FEgwlo9qpdbgAAAAAAAAAAAAAAHAfY1qUAAAAAAAAAAAAAAAAA4G/rVAAAAAAAAAAAAAAAAABQrW+dCgAAAAAAAAAAAAAAAAAAGCUBAAAAAAAAAAAAALjWA6kBEAfC9SDsAAAAAElFTkSuQmCC"
+          }],
+          id: "index",
+          title: "HR meets IT"
+        },
+        languageSelectorState: false,
+        mountedStyle: {
+          display: 'block',
+        },
+      },
+      created: function() {
+        var id = this.inputObject.id;
+        var type = this.inputObject.menu.isMain ? 'Main Menu' : 'Sub Menu';
+        var title = this.inputObject.title;
+
+        this.PrepareButtons();
+
+        setTimeout(function() {
+          cmsAnalytics(id, type, title);
+        }, 1000);
+      },
+      mounted: function() {
+        var that = this;
+        setTimeout(function() {
+          try {
+            // console.log('should say: ' + this.inputObject.slides[current].speech)
+            that.SayIntro();
+          } catch (err) {}
+        }, 200)
+      },
+      methods: {
+        executeAction: function(type, action) {
+          if (type == 'LINK') window.location.href = action;
+          else if (type == 'TRIGGER') {
+            button(action);
+            //session.service("ALMemory").then(function (memory) {
+            //memory.raiseEvent(action, true);
+            //});
+          } else {
+            var fn = new Function(action);
+            fn();
+          }
+        },
+        toggleLanguageSelector: function() {
+          this.languageSelectorState = !this.languageSelectorState
+        },
+        changeLanguage: function(l) {
+          this.languageSelectorState = false
+          //switchLanguage(this.languages[l].language)
+          //switchLanguage(this.findLanguage(l).ReadableName)
+          switchLanguage(l)
+        },
+        getLanguage: function(langCode) {
+          return this.findLanguage(langCode || "enu")
+        },
+        GetFlagStyle: function(langCode) {
+          return {
+            backgroundImage: 'url("' + this.getLanguage(langCode).Icon + '")'
+          }
+        },
+        findLanguage: function(langCode) {
+          var all = this.inputObject.allowedLanguages
+          console.log(langCode, all)
+          for (var i = 0; i < all.length; i++) {
+            if (all[i].Lang === langCode) {
+              return all[i]
+            }
+          }
+          return null
+        },
+        PrepareButtons: function() {
+          switch (this.inputObject.buttons.length) {
+            case (1):
+              this.buttonCssClass.push({
+                baseClass: '',
+                subClasses: [{
+                  value: 'button',
+                  button: this.inputObject.buttons[0]
+                }]
+              });
+              break;
+            case (2):
+              this.buttonCssClass.push({
+                baseClass: '',
+                subClasses: [{
+                  value: 'button_left_2',
+                  button: this.inputObject.buttons[0]
+                }, {
+                  value: 'button_right_2',
+                  button: this.inputObject.buttons[1]
+                }]
+              });
+              break;
+            case (3):
+              this.buttonCssClass.push({
+                baseClass: '',
+                subClasses: [{
+                  value: 'button_left_3',
+                  button: this.inputObject.buttons[0]
+                }, {
+                  value: 'button_center_3',
+                  button: this.inputObject.buttons[1]
+                }, {
+                  value: 'button_right_3',
+                  button: this.inputObject.buttons[2]
+                }]
+              });
+              break
+            case (4):
+              this.buttonCssClass.push({
+                baseClass: '',
+                subClasses: [{
+                  value: 'button_left_4',
+                  button: this.inputObject.buttons[0]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[1]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[2]
+                }, {
+                  value: 'button_right_4',
+                  button: this.inputObject.buttons[3]
+                }]
+              });
+              break;
+            case (5):
+              this.buttonCssClass.push({
+                baseClass: 'row_1',
+                subClasses: [{
+                  value: 'button_left_4',
+                  button: this.inputObject.buttons[0]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[1]
+                }]
+              });
+              this.buttonCssClass.push({
+                baseClass: 'row_2',
+                subClasses: [{
+                  value: 'button_left_4',
+                  button: this.inputObject.buttons[2]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[3]
+                }, {
+                  value: 'button_right_4',
+                  button: this.inputObject.buttons[4]
+                }]
+              });
+              break;
+            case (6):
+              this.buttonCssClass.push({
+                baseClass: 'row_3',
+                subClasses: [{
+                  value: 'button_left_4',
+                  button: this.inputObject.buttons[0]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[1]
+                }, {
+                  value: 'button_right_4',
+                  button: this.inputObject.buttons[2]
+                }]
+              });
+              this.buttonCssClass.push({
+                baseClass: 'row_2',
+                subClasses: [{
+                  value: 'button_left_4',
+                  button: this.inputObject.buttons[3]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[4]
+                }, {
+                  value: 'button_right_4',
+                  button: this.inputObject.buttons[5]
+                }]
+              });
+              break;
+            case (7):
+              this.buttonCssClass.push({
+                baseClass: 'row_3',
+                subClasses: [{
+                  value: 'button_left_4',
+                  button: this.inputObject.buttons[0]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[1]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[2]
+                }]
+              });
+              this.buttonCssClass.push({
+                baseClass: 'row_4',
+                subClasses: [{
+                  value: 'button_left_4',
+                  button: this.inputObject.buttons[3]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[4]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[5]
+                }, {
+                  value: 'button_right_4',
+                  button: this.inputObject.buttons[6]
+                }]
+              });
+              break;
+            case (8):
+              this.buttonCssClass.push({
+                baseClass: 'row_4',
+                subClasses: [{
+                  value: 'button_left_4',
+                  button: this.inputObject.buttons[0]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[1]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[2]
+                }, {
+                  value: 'button_right_4',
+                  button: this.inputObject.buttons[3]
+                }]
+              });
+              this.buttonCssClass.push({
+                baseClass: 'row_5',
+                subClasses: [{
+                  value: 'button_left_4',
+                  button: this.inputObject.buttons[4]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[5]
+                }, {
+                  value: 'button_center_4',
+                  button: this.inputObject.buttons[6]
+                }, {
+                  value: 'button_right_4',
+                  button: this.inputObject.buttons[7]
+                }]
+              });
+              break;
+          }
+        },
+      },
+      computed: {
+        IsLightTheme: function() {
+          if (this.inputObject.menu.themeType == 'LIGHT') {
+            return true
+          }
+          return false
+        },
+        SayIntro: function() {
+          if (this.inputObject.menu.introText != '') {
+            console.log("intro: " + this.inputObject.menu.introText)
+            saySentence(this.inputObject.menu.introText)
+          }
+        },
+        GetBrandingClass: function() {
+          if (this.IsLightTheme) return 'branding-container-dark';
+          else return 'branding-container-white';
+        },
+        GetBrandingStyle: function() {
+          if (this.IsLightTheme) return {
+            'background-image': 'url("https://pip.humanizing.com/rb_content_template/templates/images/ht_logo_dark.png")'
+          };
+          else return {
+            'background-image': 'url("https://pip.humanizing.com/rb_content_template/templates/images/ht_logo.png")'
+          };
+        },
+        GetBackLinkImage: function() {
+          if (this.IsLightTheme) return 'https://pip.humanizing.com/rb_content_template/templates/images/back_icon.svg';
+          else return 'https://pip.humanizing.com/rb_content_template/templates/images/back_icon_wh.svg';
+        },
+        GetHomeLinkImage: function() {
+          if (this.IsLightTheme) return 'https://pip.humanizing.com/rb_content_template/templates/images/home_icon_D.svg';
+          else return 'https://pip.humanizing.com/rb_content_template/templates/images/home_icon_D_wh.svg';
+        },
+        GetBackLinkClass: function() {
+          if (this.IsLightTheme) return 'back-icon'
+          else return 'back-icon back-icon-white'
+          //else return 'back-icon-white'
+        },
+        GetHomeLinkClass: function() {
+          if (this.IsLightTheme) return 'home-icon'
+          else return 'home-icon home-icon-white'
+          //else return 'home-icon-white'
+        },
+        IsNotMain: function() {
+          return !this.inputObject.menu.isMain;
+        },
+        IsDarkTheme: function() {
+          if (this.inputObject.menu.themeType == 'DARK') {
+            return true
+          }
+          return false
+        },
+        GetButtonCount: function() {
+          return this.inputObject.buttons.length;
+        },
+        GetHeaderThemeType: function() {
+          if (this.IsLightTheme) {
+            return 'header-light'
+          }
+          return 'header-dark'
+        },
+        GetTitleThemeType: function() {
+          if (this.IsLightTheme) {
+            return 'title'
+          }
+          return 'title-dark'
+        },
+        GetBackgroundClass: function() {
+          var temp = ''
+          if (this.IsLightTheme) temp += temp + 'background-light'
+          else temp += temp + 'background-dark'
+          if (this.inputObject.buttons.length == 1) return temp
+          if (this.inputObject.buttons.length <= 5) temp += '_' + this.inputObject.buttons.length
+          else temp += '_5'
+          return temp
+        },
+        allLanguages: function() {
+          // return this.inputObject.allowedLanguages
+          var all = this.inputObject.allowedLanguages
+          var allowed = []
+          for (var i = 0; i < all.length; i++) {
+            if (all[i].Active) {
+              allowed.push(all[i])
+            }
+          }
+
+          return allowed
+        },
+        currentLanguageCode: function() {
+          return this.inputObject.language || "enu"
+        },
+        currentLanguage: function() {
+          // return this.languages[this.currentLanguageCode]
+          return this.findLanguage(this.currentLanguageCode)
+        },
+        GetSelectorContentClass: function() {
+          if (this.languageSelectorState) {
+            return 'show'
+          }
+          return 'hide'
+        },
+      }
+    });
+  </script>
+
+  <script>
+    $('document').ready(function() {
+      console.log("\n\n\n\nWhat is up?\n\n\n\n\n");
+      initQiSession(function() {
+        document.getElementById("good_button").addEventListener("click", function() {
+          sayGood();
+        });
+        document.getElementById("bad_button").addEventListener("click", function() {
+          sayBad();
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Pepper';
+    src: url('../fonts/pepper/PepperHTRegular.eot');
+    src: url('../fonts/pepper/PepperHTRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/pepper/PepperHTRegular.woff2') format('woff2'),
+        url('../fonts/pepper/PepperHTRegular.woff') format('woff'),
+        url('../fonts/pepper/PepperHTRegular.ttf') format('truetype'),
+        url('../fonts/pepper/PepperHTRegular.svg#PepperHTRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pepper';
+    src: url('../fonts/pepper/PepperHTLight.eot');
+    src: url('../fonts/pepper/PepperHTLight.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/pepper/PepperHTLight.woff2') format('woff2'),
+        url('../fonts/pepper/PepperHTLight.woff') format('woff'),
+        url('../fonts/pepper/PepperHTLight.ttf') format('truetype'),
+        url('../fonts/pepper/PepperHTLight.svg#PepperHTLight') format('svg');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pepper';
+    src: url('../fonts/pepper/PepperHTBold.eot');
+    src: url('../fonts/pepper/PepperHTBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/pepper/PepperHTBold.woff2') format('woff2'),
+        url('../fonts/pepper/PepperHTBold.woff') format('woff'),
+        url('../fonts/pepper/PepperHTBold.ttf') format('truetype'),
+        url('../fonts/pepper/PepperHTBold.svg#PepperHTBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+

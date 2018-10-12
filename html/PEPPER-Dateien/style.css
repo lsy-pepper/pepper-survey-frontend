@@ -1,0 +1,532 @@
+﻿html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+html {
+    height: 800px;
+    width: 1280px;
+}
+
+#app {
+    min-height: 800px;
+}
+
+
+/*--------------------------------------------- BUTTONS --------------------------------------------------------------*/
+
+
+.button {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.button_left_2 {
+    position: relative;
+    width: 435px;
+    height: 435px;
+    border-radius: 50%;
+    margin-left: 176px;
+    float: left;
+    text-align: center;
+}
+
+.button_text {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 10px;
+}
+
+.button_left_3 {
+    position: relative;
+    width: 324px;
+    height: 324px;
+    border-radius: 50%;
+    margin-left: 114px;
+    float: left;
+    text-align: center;
+}
+
+.button_left_4 {
+    position: relative;
+    width: 245px;
+    height: 245px;
+    border-radius: 50%;
+    margin-left: 105px;
+    float: left;
+    text-align: center;
+}
+
+.button_center_3 {
+    position: relative;
+    width: 324px;
+    height: 324px;
+    border-radius: 50%;
+    margin-left: 40px;
+    float: left;
+    text-align: center;
+}
+
+.button_center_4 {
+    position: relative;
+    width: 245px;
+    height: 245px;
+    border-radius: 50%;
+    margin-left: 30px;
+    float: left;
+    text-align: center;
+}
+
+.button_right_2 {
+    position: relative;
+    width: 435px;
+    height: 435px;
+    border-radius: 50%;
+    margin-right: 176px;
+    float: right;
+    text-align: center;
+}
+
+.button_right_3 {
+    position: relative;
+    width: 324px;
+    height: 324px;
+    border-radius: 50%;
+    margin-right: 114px;
+    float: right;
+    text-align: center;
+}
+
+.button_right_4 {
+    position: relative;
+    width: 245px;
+    height: 245px;
+    border-radius: 50%;
+    margin-right: 105px;
+    float: right;
+    text-align: center;
+}
+
+    /*Nur für den Button Text*/
+
+    .button div, .button_left_2 div, .button_left_3 div, .button_left_4 div,
+    .button_right_2 div, .button_right_3 div, .button_right_4 div, .button_center_3 div, .button_center_4 div {
+        display: block;
+        margin: auto;
+    }
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.logo-container {
+    display: inline-block;
+    height: 100%;
+    width: 200px;
+    margin: 0 auto;
+    margin-right: 20px;
+    float: right;
+}
+
+.close-container {
+    display: inline-block;
+    height: 100%;
+    width: 200px;
+    margin: 0 auto;
+    margin-right: 20px;
+    float: left;
+}
+
+.branding-container-dark {
+    position: absolute;
+    width: 120px;
+    height: 45px;
+    left: 1140px;
+    bottom: 20px;
+    right: 20px;
+    background-image: url("https://ht-cms.azurewebsites.net/rb_content_template/templates/images/ht_logo_dark.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.branding-container-white {
+    position: absolute;
+    width: 120px;
+    height: 45px;
+    left: 1140px;
+    bottom: 20px;
+    right: 20px;
+    background-image: url("https://ht-cms.azurewebsites.net/rb_content_template/templates/images/ht_logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.title-container {
+    display: inline-block;
+    text-align: center;
+    height: 100px;
+    /*width: 746px;*/
+    width: 840px;
+    float: left;
+}
+
+.header-icons {
+    float: left;
+    width: 200px;
+    margin-right: 20px;
+}
+
+/*------------------------------------------------- light ------------------------------------------------------------*/
+
+#title {
+    display: inline-block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: #505050;
+    font-size: 35px;
+}
+
+.slider-left-light {
+    position: absolute;
+    height: 150px;
+    width: 75px;
+    border-radius: 0 300px 300px 0;
+    background-color: white;
+    top: 375px;
+}
+
+    .slider-left-light img {
+        position: absolute;
+        margin: 0 auto;
+        top: 47px;
+        opacity: 0.6;
+        transform: scale(0.75,0.75);
+    }
+
+.slider-right-light {
+    position: absolute;
+    height: 150px;
+    width: 75px;
+    border-radius: 300px 0 0 300px;
+    background-color: white;
+    top: 375px;
+    left: 1205px;
+}
+
+    .slider-right-light img {
+        position: absolute;
+        margin: 0 auto;
+        top: 47px;
+        left: 20px;
+        opacity: 0.6;
+        transform: scale(0.75,0.75) rotate(180deg);
+    }
+
+.back-icon {
+    display: inline-block;
+    height: 45px;
+    width: 50px;
+    margin-left: 45px;
+    margin-bottom: 22px;
+    /*fill: #505050;*/
+}
+
+.home-icon {
+    display: inline-block;
+    height: 50px;
+    width: 60px;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /*fill: #505050;*/
+}
+
+.header-light {
+    height: 100px;
+    width: 1280px;
+}
+
+.background-light {
+    height: 500px;
+    width: 1280px;
+    background-color: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.background-light_2 {
+    height: 438px;
+    width: 1280px;
+    background-color: #fff;
+    padding-top: 131px;
+    padding-bottom: 131px;
+}
+
+.background-light_3 {
+    height: 324px;
+    width: 1280px;
+    background-color: #fff;
+    padding-top: 188px;
+    padding-bottom: 188px;
+}
+
+.background-light_4 {
+    height: 245px;
+    width: 1280px;
+    background-color: #fff;
+    padding-top: 227.5px;
+    padding-bottom: 227.5px;
+}
+
+.background-light_5 {
+    height: 520px;
+    width: 1280px;
+    background-color: #fff;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+/*------------------------------------------------- dark -------------------------------------------------------------*/
+
+#title-dark {
+    display: inline-block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: #fff;
+    font-size: 35px;
+}
+
+.slider-left-dark {
+    position: absolute;
+    height: 150px;
+    width: 75px;
+    border-radius: 0 300px 300px 0;
+    background-color: white;
+    top: 375px;
+}
+
+    .slider-left-dark img {
+        position: absolute;
+        margin: 0 auto;
+        top: 47px;
+        opacity: 0.6;
+        transform: scale(0.75,0.75);
+    }
+
+.slider-right-dark {
+    position: absolute;
+    height: 150px;
+    width: 75px;
+    border-radius: 300px 0 0 300px;
+    background-color: white;
+    top: 375px;
+    left: 1205px;
+}
+
+    .slider-right-dark img {
+        position: absolute;
+        margin: 0 auto;
+        top: 47px;
+        left: 20px;
+        opacity: 0.6;
+        transform: scale(0.75,0.75) rotate(180deg);
+    }
+
+/*.back-icon-white {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin-left: 55px;
+    margin-bottom: 20px;
+    transform: scale(0.80,0.80);
+}
+
+#home-icon-white {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.back-icon-white {
+    fill: #fff;
+}
+
+.home-icon-white {
+    fill: #fff;
+}
+*/
+.header-dark {
+    height: 100px;
+    width: 1280px;
+    background-color: #505050;
+}
+
+.background-dark {
+    height: 500px;
+    width: 1280px;
+    background-color: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.background-dark_2 {
+    height: 438px;
+    width: 1280px;
+    background-color: #fff;
+    padding-top: 131px;
+    padding-bottom: 131px;
+}
+
+.background-dark_3 {
+    height: 324px;
+    width: 1280px;
+    background-color: #fff;
+    padding-top: 188px;
+    padding-bottom: 188px;
+}
+
+.background-dark_4 {
+    height: 245px;
+    width: 1280px;
+    background-color: #fff;
+    padding-top: 227.5px;
+    padding-bottom: 227.5px;
+}
+
+.background-dark_5 {
+    height: 520px;
+    width: 1280px;
+    background-color: #fff;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+/*------------------------------------- 2 Row Layoutsettings (P05-P08) -----------------------------------------------*/
+
+.row_1 {
+    height: 245px;
+    width: 1280px;
+    margin-bottom: 30px;
+}
+
+    .row_1 .button_left_4 {
+        margin-left: 380px !important;
+    }
+
+.row_2 {
+    height: 245px;
+    width: 1280px;
+}
+
+    .row_2 .button_left_4 {
+        margin-left: 242.5px !important;
+    }
+
+    .row_2 .button_right_4 {
+        margin-right: 242.5px !important;
+    }
+
+/*---- First Row in P06 (3x3) ----*/
+
+.row_3 {
+    height: 245px;
+    width: 1280px;
+    padding-bottom: 30px;
+}
+
+    .row_3 .button_left_4 {
+        margin-left: 242.5px !important;
+    }
+
+    .row_3 .button_right_4 {
+        margin-right: 242.5px !important;
+    }
+
+/*---- First Row in P07 ----*/
+
+.row_4 {
+    height: 245px;
+    width: 1280px;
+    padding-bottom: 30px;
+}
+
+    .row_4 .button_left_4 {
+        margin-left: 105px !important;
+    }
+
+    .row_4 .button_right_4 {
+        margin-right: 105px !important;
+    }
+
+/*---- Second Row in P08 (4x2) ----*/
+
+.row_5 {
+    height: 245px;
+    width: 1280px;
+    padding-bottom: 30px;
+}
+
+    .row_5 .button_left_4 {
+        margin-left: 105px !important;
+    }
+
+    .row_5 .button_right_4 {
+        margin-right: 105px !important;
+    }
+
+
+
+.swal2-title {
+  font-family: Roboto !important;
+}
