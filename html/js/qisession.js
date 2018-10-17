@@ -23,6 +23,11 @@ var badMessages = ['Vielen Dank für deine Bewertung.',
   'Wir freuen uns über Fiedbäck an der Kudo Wand.',
   'Wenn du Ideen zur Verbesserung hast, dann kannst du diese gerne an die Kudo Wand hängen.'];
 
+var welcomeMessage = ['Du kannst mir gerne deine Bewertung abgeben.',
+  'Hallo. Wie findest du diese Veranstaltung?',
+  'Hallo. Gefällt dir diese Veranstaltung?',
+  'Darf ich dich nach deiner Meinung zu dieser Veranstaltung fragen?'];
+
 function pleaseTalkToAProjectMember(code) {
   swal({
     type: 'error',
@@ -35,6 +40,7 @@ function initALTextToSpeech(session, callback) {
   session.service("ALTextToSpeech").then(function(_tts) {
     tts = _tts;
     callback();
+    tts.say(welcomeMessage[Math.floor(Math.random()*welcomeMessage.length)])
   }, function(error) {
     pleaseTalkToAProjectMember("tts0");
   });
